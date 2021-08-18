@@ -27,7 +27,7 @@ namespace ConsoleGame_CoverShooter.Classes
             }
             else
             {
-                Console.WriteLine("the enemy misses");
+                Console.WriteLine("You miss.");
             }
         }
 

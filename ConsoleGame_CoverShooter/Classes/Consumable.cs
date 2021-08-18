@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame_CoverShooter.Classes
 {
-    public interface IShooter
+    public class Consumable
     {
-        int AC { get; }
-        int HP { get; set; }
-        bool InCover { get; }
+        int Quantity { get; set; }
 
-        void TakeCover();
-        void Shoot(Player player);
+
+        public void UseItem()
+        {
+            Quantity--;
+        }
     }
 }
