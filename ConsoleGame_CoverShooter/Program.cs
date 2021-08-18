@@ -11,12 +11,10 @@ namespace ConsoleGame_CoverShooter
     {
         static void Main(string[] args)
         {
+            Player player = new Player();
             BlueEnemy blue = new BlueEnemy();
-            Console.WriteLine(blue.AC);
-            blue.TakeCover();
-            Console.WriteLine(blue.AC);
-            Console.ReadKey();
 
+            blue.Action1(player);
         }
     }
 }

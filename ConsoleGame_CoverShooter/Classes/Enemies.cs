@@ -15,14 +15,21 @@ namespace ConsoleGame_CoverShooter.Classes
             AC += 7;
             Console.WriteLine("The enemy takes cover!");
         }
-        public void Shoot()
+        public void Shoot(Player player)
         {
             AC = 10;
             Random rand = new Random();
+            int shoot =rand.Next(1, 21);
+            if (shoot > player.AC)
+            {
+                int dmg= rand.Next(1, 7);
+                player.HP -= dmg;
+                Console.WriteLine($"The");
+            }
         }
-        public void Action1()
+        public void Action1(Player player)
         {
-            Shoot();
+            Shoot(player);
         }
 
         public void Action2()
