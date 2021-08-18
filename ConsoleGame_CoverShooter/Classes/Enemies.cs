@@ -9,16 +9,30 @@ namespace ConsoleGame_CoverShooter.Classes
 {
     public class BlueEnemy : IEnemy, IShooter
     {
-        public int AC { get; set; } = 10;
+        public int AC
+        {
+            get
+            {
+                if (InCover)
+                {
+                    return 17;
+                }
+                else
+                {
+                    return 10;
+                }
+            }
+        }
         public int HP { get; set; } = 15;
+        public bool InCover { get; private set; }
         public void TakeCover()
         {
-            AC = 17;
+            InCover = true;
             Console.WriteLine("The enemy takes cover!");
         }
         public void Shoot(Player player)
         {
-            AC = 10;
+            InCover = false;
             Random rand = new Random();
             Thread.Sleep(10);
             int shoot =rand.Next(1, 21);
@@ -52,16 +66,30 @@ namespace ConsoleGame_CoverShooter.Classes
     }
     public class RedEnemy:IEnemy, IShooter
     {
-        public int AC { get; set; } = 10;
+        public int AC
+        {
+            get
+            {
+                if (InCover)
+                {
+                    return 17;
+                }
+                else
+                {
+                    return 10;
+                }
+            }
+        }
         public int HP { get; set; } = 15;
+        public bool InCover { get; private set; }
         public void TakeCover()
         {
-            AC = 17;
+            InCover = true;
             Console.WriteLine("The enemy takes cover!");
         }
         public void Shoot(Player player)
         {
-            AC = 10;
+            InCover = false;
             Random rand = new Random();
             Thread.Sleep(10);
             int shoot = rand.Next(1, 21);
@@ -96,16 +124,30 @@ namespace ConsoleGame_CoverShooter.Classes
     }
     public class YellowEnemy : IEnemy, IShooter
     {
-        public int AC { get; set; } = 10;
+        public int AC
+        {
+            get
+            {
+                if (InCover)
+                {
+                    return 17;
+                }
+                else
+                {
+                    return 10;
+                }
+            }
+        }
         public int HP { get; set; } = 15;
+        public bool InCover { get; private set; }
         public void TakeCover()
         {
-            AC = 17;
+            InCover = true;
             Console.WriteLine("The enemy takes cover!");
         }
         public void Shoot(Player player)
         {
-            AC = 10;
+            InCover = false;
             Random rand = new Random();
             Thread.Sleep(10);
             int shoot = rand.Next(1, 21);
@@ -140,16 +182,30 @@ namespace ConsoleGame_CoverShooter.Classes
     }
     public class GreenEnemy : IEnemy, IShooter
     {
-        public int AC { get; set; } = 10;
+        public int AC
+        {
+            get
+            {
+                if (InCover)
+                {
+                    return 17;
+                }
+                else
+                {
+                    return 10;
+                }
+            }
+        }
         public int HP { get; set; } = 15;
+        public bool InCover { get; private set; }
         public void TakeCover()
         {
-            AC = 17;
+            InCover = true;
             Console.WriteLine("The enemy takes cover!");
         }
         public void Shoot(Player player)
         {
-            AC = 10;
+            InCover = false;
             Random rand = new Random();
             Thread.Sleep(10);
             int shoot = rand.Next(1, 21);
