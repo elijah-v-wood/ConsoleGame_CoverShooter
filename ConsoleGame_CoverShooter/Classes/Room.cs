@@ -34,17 +34,14 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        //private Consumable Drop {get; set; }
+        private Consumable Drop {get; set; }
 
-        /*
-         * for when we implement the item class later
-        public void DropItem(Player player)
+        public void DropItem(Inventory inventory)
         {
-            player.inventory.Add(Drop);
+            inventory.PickUp(Drop);
         }
-         */
 
-        public Room( /*int enemynumber Consumable drop*/)
+        public Room( /*int enemynumber */)
         {
             IEnemy[] PossibleEnemies = { new BlueEnemy(), new RedEnemy(), new YellowEnemy(), new GreenEnemy() };
             int enemynumber = 1; // remove later when we add to the constructor
@@ -56,8 +53,22 @@ namespace ConsoleGame_CoverShooter.Classes
                 int enemyIndex = randy.Next(0, PossibleEnemies.Length);
                 Enemies.Add(PossibleEnemies[enemyIndex]);
             }
-
-            //Drop = drop;
+            Thread.Sleep(5);
+            int itemChance = randy.Next(1, 101);
+            Consumable drop;
+            if (itemChance < 51)
+            {
+                drop = new Grenade();
+            }
+            else if (itemChance < 76)
+            {
+                drop = new ShrugOff();
+            }
+            else
+            {
+                drop = new EagleEye();
+            }
+            Drop = drop;
         }
 
     }
