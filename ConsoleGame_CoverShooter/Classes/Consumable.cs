@@ -33,7 +33,7 @@ namespace ConsoleGame_CoverShooter.Classes
 
     public class Grenade : Consumable
     {
-        public void Throw(IShooter enemy)
+        public void Throw(IEnemy enemy)
         {
             if (HasItem)
             {
@@ -50,7 +50,7 @@ namespace ConsoleGame_CoverShooter.Classes
                     int dmg = rand.Next(1, 7);
                     if (enemy.InCover) { dmg *= 2; }
                     enemy.HP -= dmg;
-                    Console.WriteLine($"you shot the {enemy.GetType().ToString()} for {shot}");
+                    Console.WriteLine($"you shot the {enemy.name} for {shot}");
                     Console.WriteLine($"takes {dmg} damage.");
                 }
                 else
