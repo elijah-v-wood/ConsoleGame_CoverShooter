@@ -8,11 +8,6 @@ namespace ConsoleGame_CoverShooter.Classes
 {
     public interface IShooter
     {
-        int AC { get; }
-        int HP { get; set; }
-        bool InCover { get; }
-
-        void TakeCover();
-        void Shoot(Player player);
+        
     }
 }

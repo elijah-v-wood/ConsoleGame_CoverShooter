@@ -5,3 +5,10 @@ C:\Users\wolfc\source\repos\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\ob
 C:\Users\wolfc\source\repos\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\obj\Debug\ConsoleGame_CoverShooter.csproj.CoreCompileInputs.cache
 C:\Users\wolfc\source\repos\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\obj\Debug\ConsoleGame_CoverShooter.exe
 C:\Users\wolfc\source\repos\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\obj\Debug\ConsoleGame_CoverShooter.pdb
+C:\ElevenFiftyProjects\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\obj\Debug\ConsoleGame_CoverShooter.csproj.AssemblyReference.cache
+C:\ElevenFiftyProjects\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\obj\Debug\ConsoleGame_CoverShooter.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\obj\Debug\ConsoleGame_CoverShooter.exe
+C:\ElevenFiftyProjects\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\obj\Debug\ConsoleGame_CoverShooter.pdb
+C:\ElevenFiftyProjects\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\bin\Debug\ConsoleGame_CoverShooter.exe.config
+C:\ElevenFiftyProjects\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\bin\Debug\ConsoleGame_CoverShooter.exe
+C:\ElevenFiftyProjects\ConsoleGame_CoverShooter\ConsoleGame_CoverShooter\bin\Debug\ConsoleGame_CoverShooter.pdb
