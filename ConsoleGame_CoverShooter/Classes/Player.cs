@@ -19,15 +19,22 @@ namespace ConsoleGame_CoverShooter.Classes
             int shot = rand.Next(1, 21);
             if (shot > enemy.AC)
             {
+                Thread.Sleep(10);
                 int dmg = rand.Next(1, 7);
                 enemy.HP -= dmg;
-                Console.WriteLine($"you shot the {enemy.GetType().ToString()} for {dmg}");
+                Console.WriteLine($"you shot the {enemy.GetType().ToString()} for {shot}");
+                Console.WriteLine($"takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("the enemy misses");
             }
         }
 
         public void TakeCover()
         {
-
+            AC = 17;
+            Console.WriteLine("you take cover!");
         }
     }
 }
