@@ -33,7 +33,7 @@ namespace ConsoleGame_CoverShooter.Classes
 
     public class Grenade : Consumable
     {
-        public void Throw(IShooter enemy)
+        public void Throw(IEnemy enemy)
         {
             if (HasItem)
             {
