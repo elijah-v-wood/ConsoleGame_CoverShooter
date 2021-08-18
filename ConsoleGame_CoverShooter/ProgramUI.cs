@@ -59,6 +59,7 @@ namespace ConsoleGame_CoverShooter
         {
             Console.WriteLine("Starting the game...");
             Inventory playerInventory = new Inventory();
+            playerInventory.grenade.Quantity = 1;
             Player player = new Player();
             Room firstRoom = new Room();
             Room secondRoom = new Room();
@@ -106,7 +107,7 @@ namespace ConsoleGame_CoverShooter
                     case "open":
                     case "inventory":
                     case "open inventory":
-                        OpenPockets();
+                        OpenPockets(playerInventory,currentRoom.Enemies.First<IEnemy>() );
                         break;
                     default:
                         Console.WriteLine("what are you gonna do?");
