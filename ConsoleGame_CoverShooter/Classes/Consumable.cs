@@ -10,7 +10,20 @@ namespace ConsoleGame_CoverShooter.Classes
     public class Consumable
     {
         int Quantity { get; set; }
-
+        protected bool HasItem
+        {
+            get
+            {
+                if (Quantity > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
 
         public void UseItem()
         {
@@ -22,21 +35,35 @@ namespace ConsoleGame_CoverShooter.Classes
     {
         public void Throw(IShooter enemy)
         {
-            Random rand = new Random();
-            Thread.Sleep(10);
-            int shot = rand.Next(1, 21);
-            if (shot > enemy.AC)
+            if (HasItem)
             {
+                Random rand = new Random();
                 Thread.Sleep(10);
-                int dmg = rand.Next(1, 7);
-                enemy.HP -= dmg;
-                Console.WriteLine($"you shot the {enemy.GetType().ToString()} for {shot}");
-                Console.WriteLine($"takes {dmg} damage.");
+                int shot = rand.Next(1, 21);
+                if (enemy.InCover)
+                {
+                    shot += 10;
+                }
+                if (shot > enemy.AC)
+                {
+                    Thread.Sleep(10);
+                    int dmg = rand.Next(1, 7);
+                    if (enemy.InCover) { dmg *= 2; }
+                    enemy.HP -= dmg;
+                    Console.WriteLine($"you shot the {enemy.GetType().ToString()} for {shot}");
+                    Console.WriteLine($"takes {dmg} damage.");
+                }
+                else
+                {
+                    Console.WriteLine("You miss.");
+                }
+                UseItem();
             }
             else
             {
-                Console.WriteLine("You miss.");
+                Console.WriteLine("You need a grenade to use it...");
             }
+
 
         }
     }
