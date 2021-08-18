@@ -12,7 +12,7 @@ namespace ConsoleGame_CoverShooter.Classes
         public int HP { get; set; } = 15;
         public void TakeCover()
         {
-            AC += 7;
+            AC = 17;
             Console.WriteLine("The enemy takes cover!");
         }
         public void Shoot(Player player)
