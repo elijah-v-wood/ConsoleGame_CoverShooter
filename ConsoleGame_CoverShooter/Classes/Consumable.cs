@@ -9,7 +9,7 @@ namespace ConsoleGame_CoverShooter.Classes
 {
     public class Consumable
     {
-        int Quantity { get; set; }
+        public int Quantity { get; set; }
         protected bool HasItem
         {
             get
@@ -33,6 +33,13 @@ namespace ConsoleGame_CoverShooter.Classes
 
     public class Grenade : Consumable
     {
+        public string Name
+        {
+            get
+            {
+                return "Grenade";
+            }
+        }
         public void Throw(IEnemy enemy)
         {
             if (HasItem)
@@ -67,4 +74,16 @@ namespace ConsoleGame_CoverShooter.Classes
 
         }
     }
+    public class ShrugOff : Consumable
+    {
+        public string Name { get { return "Shrug-Off"; } }
+        public bool ShrugOffFlag { get; set; }
+
+    }
+    public class EagleEye : Consumable
+    {
+        public string Name { get { return "Eagle-Eye"; } }
+        public bool EagleEyeFlag { get; set; }
+    }
+
 }
