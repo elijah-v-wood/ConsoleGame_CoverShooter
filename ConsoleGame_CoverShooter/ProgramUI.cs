@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleGame_CoverShooter.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,6 @@ namespace ConsoleGame_CoverShooter
         }
         private void Game()
         {
-            Console.Clear();
 
         }
         private void Instruct()
