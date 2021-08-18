@@ -58,6 +58,8 @@ namespace ConsoleGame_CoverShooter
         private void Game()
         {
             Console.WriteLine("Starting the game...");
+            Inventory playerInventory = new Inventory();
+            playerInventory.grenade.Quantity = 1;
             Player player = new Player();
             Room firstRoom = new Room();
             Room secondRoom = new Room();
@@ -100,6 +102,12 @@ namespace ConsoleGame_CoverShooter
                     case "takecover":
                     case "take":
                         player.TakeCover();
+                        break;
+                    case "3":
+                    case "open":
+                    case "inventory":
+                    case "open inventory":
+                        OpenPockets(playerInventory,currentRoom.Enemies.First<IEnemy>() );
                         break;
                     default:
                         Console.WriteLine("what are you gonna do?");
@@ -179,6 +187,32 @@ namespace ConsoleGame_CoverShooter
             Console.WriteLine("Good-bye!");
             Thread.Sleep(100);
             isRunning = false;
+        }
+        private void OpenPockets(Inventory pockets, IEnemy enemy)
+        {
+            pockets.DisplayInventory();
+            Console.WriteLine("Input the item you wish to use or type exit");
+            string userInput = Console.ReadLine().ToLower();
+            switch (userInput)
+            {
+                case "grenade":
+                    pockets.grenade.Throw(enemy);
+                    break;
+                case "shrugoff":
+                case "shrug off":
+                case "shrug-off":
+                    pockets.shrugOff.UseItem();
+                    break;
+                case "eagleeye":
+                case "eagle-eye":
+                case "eagle eye":
+                    pockets.eagleEye.UseItem();
+                    break;
+                case "exit":
+                case "close":
+                case "leave":
+                    break;
+            }
         }
     }
 }

@@ -9,10 +9,12 @@ namespace ConsoleGame_CoverShooter.Classes
     public class Inventory
     {
         public List<Consumable> _playerInventory = new List<Consumable>();
+        public Grenade grenade = new Grenade();
+        public ShrugOff shrugOff = new ShrugOff();
+        public EagleEye eagleEye = new EagleEye();
 
         public void PickUp(Consumable item)
         {
-            _playerInventory.Add(item);
             item.Quantity++;
         }
         public void DisplayInventory()
