@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleGame_CoverShooter.Classes
@@ -24,7 +25,7 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        //private Item Drop {get; set; }
+        //private Consumable Drop {get; set; }
 
         /*
          * for when we implement the item class later
@@ -34,9 +35,19 @@ namespace ConsoleGame_CoverShooter.Classes
         }
          */
 
-        public Room(List<IEnemy> enemylist /*, Item drop*/)
+        public Room( /*int enemynumber Consumable drop*/)
         {
-            Enemies = enemylist;
+            IEnemy[] PossibleEnemies = [new BlueEnemy(), new RedEnemy(), new YellowEnemy(), new GreenEnemy()];
+            int enemynumber = 1; // remove later when we add to the constructor
+            Enemies = new List<IEnemy>();
+            Random randy = new Random();
+            for (int i = 0; i < enemynumber; i++)
+            {
+                Thread.Sleep(5);
+                int enemyIndex = randy.Next(0, PossibleEnemies.Length);
+                Enemies.Add(PossibleEnemies[enemyIndex]);
+            }
+
             //Drop = drop;
         }
 
