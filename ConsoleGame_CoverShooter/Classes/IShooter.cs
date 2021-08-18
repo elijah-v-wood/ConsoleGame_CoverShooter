@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame_CoverShooter.Classes
 {
-    interface IShooter
+    public interface IShooter
     {
         int AC { get; set; }
         int HP { get; set; }
 
         void TakeCover();
-        void Shoot();
+        void Shoot(Player player);
     }
 }
