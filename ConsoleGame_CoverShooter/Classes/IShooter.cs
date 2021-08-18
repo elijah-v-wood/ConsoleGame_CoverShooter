@@ -12,6 +12,6 @@ namespace ConsoleGame_CoverShooter.Classes
         int HP { get; set; }
 
         void TakeCover();
-        void Shoot();
+        void Shoot(Player player);
     }
 }

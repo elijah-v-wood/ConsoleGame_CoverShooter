@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame_CoverShooter.Classes
 {
-    public class Player : IShooter
+    public class Player
     {
         public int AC { get; set; } = 10;
         public int HP { get; set; } = 50;
