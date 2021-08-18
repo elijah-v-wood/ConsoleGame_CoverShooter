@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleGame_CoverShooter.Classes
@@ -19,12 +20,19 @@ namespace ConsoleGame_CoverShooter.Classes
         {
             AC = 10;
             Random rand = new Random();
+            Thread.Sleep(10);
             int shoot =rand.Next(1, 21);
             if (shoot > player.AC)
             {
+                Thread.Sleep(10);
                 int dmg= rand.Next(1, 7);
                 player.HP -= dmg;
-                Console.WriteLine($"The");
+                Console.WriteLine($"The enemy shoots you for {shoot}.");
+                Console.WriteLine($"You take {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine($"The enemy shoots you for {shoot} and misses.");
             }
         }
         public void Action1(Player player)
@@ -32,12 +40,12 @@ namespace ConsoleGame_CoverShooter.Classes
             Shoot(player);
         }
 
-        public void Action2()
+        public void Action2(Player player)
         {
             TakeCover();
         }
 
-        public void Action3()
+        public void Action3(Player player)
         {
             TakeCover();
         }

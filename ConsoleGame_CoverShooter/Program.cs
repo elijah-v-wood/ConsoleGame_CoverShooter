@@ -11,10 +11,8 @@ namespace ConsoleGame_CoverShooter
     {
         static void Main(string[] args)
         {
-            Player player = new Player();
-            BlueEnemy blue = new BlueEnemy();
-
-            blue.Action1(player);
+            ProgramUI game = new ProgramUI();
+            game.Run();
         }
     }
 }

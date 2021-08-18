@@ -9,9 +9,9 @@ namespace ConsoleGame_CoverShooter.Classes
     public interface IEnemy
     {
 
-        void Action1();
-        void Action2();
-        void Action3();
+        void Action1(Player player);
+        void Action2(Player player);
+        void Action3(Player player);
 
     }
 }
