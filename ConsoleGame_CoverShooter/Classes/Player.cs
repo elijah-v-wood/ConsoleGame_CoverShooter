@@ -12,18 +12,18 @@ namespace ConsoleGame_CoverShooter.Classes
         public int AC { get; set; } = 10;
         public int HP { get; set; } = 50;
 
-        public void Shoot(IShooter enemy)
+        public void Shoot(IEnemy enemy)
         {
             Random rand = new Random();
             Thread.Sleep(10);
-            int shot = rand.Next(1, 21);
+            int shot = rand.Next(1, 21) + 3;
             if (shot > enemy.AC)
             {
                 Thread.Sleep(10);
                 int dmg = rand.Next(1, 7);
                 enemy.HP -= dmg;
-                Console.WriteLine($"you shot the {enemy.GetType().ToString()} for {shot}");
-                Console.WriteLine($"takes {dmg} damage.");
+                Console.WriteLine($"you shot the {enemy.name} for {shot}");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
             }
             else
             {

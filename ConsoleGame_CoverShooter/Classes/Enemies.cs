@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame_CoverShooter.Classes
 {
-    public class BlueEnemy : IEnemy, IShooter
+    public class BlueEnemy : IEnemy
     {
+        public string name { get; } = "Blue man";
         public int AC
         {
             get
@@ -64,8 +65,9 @@ namespace ConsoleGame_CoverShooter.Classes
             TakeCover();
         }
     }
-    public class RedEnemy:IEnemy, IShooter
+    public class RedEnemy:IEnemy
     {
+        public string name { get; } = "Red man";
         public int AC
         {
             get
@@ -122,8 +124,9 @@ namespace ConsoleGame_CoverShooter.Classes
         }
 
     }
-    public class YellowEnemy : IEnemy, IShooter
+    public class YellowEnemy : IEnemy
     {
+        public string name { get; } = "Yellow man";
         public int AC
         {
             get
@@ -180,8 +183,9 @@ namespace ConsoleGame_CoverShooter.Classes
         }
 
     }
-    public class GreenEnemy : IEnemy, IShooter
+    public class GreenEnemy : IEnemy
     {
+        public string name { get; } = "Green man";
         public int AC
         {
             get

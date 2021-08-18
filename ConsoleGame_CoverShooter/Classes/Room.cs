@@ -11,6 +11,15 @@ namespace ConsoleGame_CoverShooter.Classes
     {
         public List<IEnemy> Enemies { get; set; }
 
+        public void CheckHealth(IEnemy enemy)
+        {
+            if (enemy.HP <= 0)
+            {
+                Enemies.Remove(enemy);
+            }
+
+        }
+
         public bool HasNoEnemies
         {
             get
@@ -37,7 +46,7 @@ namespace ConsoleGame_CoverShooter.Classes
 
         public Room( /*int enemynumber Consumable drop*/)
         {
-            IEnemy[] PossibleEnemies = [new BlueEnemy(), new RedEnemy(), new YellowEnemy(), new GreenEnemy()];
+            IEnemy[] PossibleEnemies = { new BlueEnemy(), new RedEnemy(), new YellowEnemy(), new GreenEnemy() };
             int enemynumber = 1; // remove later when we add to the constructor
             Enemies = new List<IEnemy>();
             Random randy = new Random();
