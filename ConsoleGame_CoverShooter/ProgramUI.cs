@@ -11,6 +11,8 @@ namespace ConsoleGame_CoverShooter
     class ProgramUI
     {
         bool isRunning = true;
+        private DateTime start { get; set; }
+        private DateTime finish { get; set; }
         public void Run()
         {
             do
@@ -58,16 +60,29 @@ namespace ConsoleGame_CoverShooter
             Console.WriteLine("Starting the game...");
             Player player = new Player();
             Room firstRoom = new Room();
+            Room secondRoom = new Room();
+            Room thirdRoom = new Room();
+            Room fourthRoom = new Room();
+            Room fifthRoom = new Room();
+            List<Room> roomList = new List<Room>();
+            roomList.Add(firstRoom);
+            roomList.Add(secondRoom);
+            roomList.Add(thirdRoom);
+            roomList.Add(fourthRoom);
+            roomList.Add(fifthRoom);
             Thread.Sleep(1000);
+            start = DateTime.Now;
             Console.Clear();
             bool combatActive = true;
             int turnCount = 1;
             while (combatActive)
             {
+                Room currentRoom = roomList.First();
                 Console.Clear();
+                
                 Console.WriteLine($"turn count : {turnCount}");
-                Console.WriteLine($"You are fighting {firstRoom.Enemies.Count()} {firstRoom.Enemies.First<IEnemy>().name}");
-                Console.WriteLine($"Enemy health is {firstRoom.Enemies.First<IEnemy>().HP}.\n" +
+                Console.WriteLine($"You are fighting {currentRoom.Enemies.Count()} {currentRoom.Enemies.First<IEnemy>().name}");
+                Console.WriteLine($"Enemy health is {currentRoom.Enemies.First<IEnemy>().HP}.\n" +
                     $"Your health is {player.HP}");
                 Console.WriteLine("What do you want to do?:\n" +
                     "1. Shoot \n" +
@@ -77,7 +92,7 @@ namespace ConsoleGame_CoverShooter
                 {
                     case "1":
                     case "shoot":
-                        player.Shoot(firstRoom.Enemies.First<IEnemy>());
+                        player.Shoot(currentRoom.Enemies.First<IEnemy>());
                         break;
                     case "2":
                     case "cover":
@@ -91,29 +106,39 @@ namespace ConsoleGame_CoverShooter
                         break;
                 }
                 Console.ReadKey();
-                for (int enemyindex = 0; enemyindex < firstRoom.Enemies.Count; enemyindex++)
+                for (int enemyindex = 0; enemyindex < currentRoom.Enemies.Count; enemyindex++)
                 {
-                    firstRoom.CheckHealth(firstRoom.Enemies[enemyindex]);
-                    if (firstRoom.Enemies.Count > 0)
+                    currentRoom.CheckHealth(currentRoom.Enemies[enemyindex]);
+                    if (currentRoom.Enemies.Count > 0)
                     {
 
                         if (turnCount % 3 == 0)
                         {
-                            firstRoom.Enemies[enemyindex].Action3(player);
+                            currentRoom.Enemies[enemyindex].Action3(player);
                         }
                         else if (turnCount % 2 == 0)
                         {
-                            firstRoom.Enemies[enemyindex].Action2(player);
+                            currentRoom.Enemies[enemyindex].Action2(player);
                         }
                         else
                         {
-                            firstRoom.Enemies[enemyindex].Action1(player);
+                            currentRoom.Enemies[enemyindex].Action1(player);
                         }
                     }
                 }
-                if (player.HP == 0 || firstRoom.HasNoEnemies)
+                if (currentRoom.HasNoEnemies) 
+                {
+                    Console.WriteLine("you killed all the enemies in the room!");
+                    roomList.Remove(currentRoom);
+                    //you get an item
+
+                }
+                if (player.HP == 0 || roomList.Count == 0)
                 {
                     combatActive = false;
+                    finish = DateTime.Now;
+                    TimeSpan gameplaytime = finish - start;
+                    Console.WriteLine($"you finished the game in {gameplaytime.Minutes} minutes and {turnCount} turns with {player.HP} hp left");
                 }
 
 
