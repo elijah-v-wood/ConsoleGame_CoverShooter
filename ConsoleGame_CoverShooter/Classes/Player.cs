@@ -16,11 +16,17 @@ namespace ConsoleGame_CoverShooter.Classes
             {
                 if (InCover)
                 {
-                    return 17;
+                    if (BArmorFlag) { return 19; }
+                    else if (AArmorFlag) { return 20; }
+                    else if (FArmorFlag) { return 22; }
+                    else { return 17; }
                 }
                 else
                 {
-                    return 10;
+                    if (BArmorFlag) { return 12; }
+                    else if (AArmorFlag) { return 13; }
+                    else if (FArmorFlag) { return 15; }
+                    else { return 10; }
                 }
             }
         }
@@ -38,6 +44,9 @@ namespace ConsoleGame_CoverShooter.Classes
         public bool RifleFlag { get; set; }
         public bool LMGFlag { get; set; }
         //ArmorFlags
+        public bool BArmorFlag { get; set; }
+        public bool AArmorFlag { get; set; }
+        public bool FArmorFlag { get; set; }
 
         public void Shoot(IEnemy enemy)
         {
