@@ -40,6 +40,7 @@ namespace ConsoleGame_CoverShooter.Classes
 
         public void Shoot(IEnemy enemy)
         {
+            InCover = false;
             Random rand = new Random();
             Thread.Sleep(10);
             int shot;
@@ -67,7 +68,7 @@ namespace ConsoleGame_CoverShooter.Classes
 
         public void TakeCover()
         {
-            AC = 17;
+            InCover = true;
             Console.WriteLine("you take cover!");
         }
     }
