@@ -34,7 +34,7 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        private Consumable Drop { get; set; }
+        public Consumable Drop { get; private set; }
 
         public void DropItem(Inventory inventory)
         {
@@ -65,7 +65,7 @@ namespace ConsoleGame_CoverShooter.Classes
             }
             Thread.Sleep(5);
             int itemChance = randy.Next(1, 101);
-            Consumable drop;
+            Consumable drop = new Consumable();
             if (itemChance < 2)
             {
                 drop = new Pistol();
@@ -106,9 +106,17 @@ namespace ConsoleGame_CoverShooter.Classes
             {
                 drop = new ShrugOff();
             }
+            else if(itemChance< 91)
+            {
+                drop = new BasicArmor();
+            }
+            else if (itemChance<99) 
+            {
+                drop = new AdvancedArmor();
+            }
             else
             {
-
+                drop = new FuturisticArmor();
             }
             Drop = drop;
         }
