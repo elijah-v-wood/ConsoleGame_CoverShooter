@@ -66,17 +66,49 @@ namespace ConsoleGame_CoverShooter.Classes
             Thread.Sleep(5);
             int itemChance = randy.Next(1, 101);
             Consumable drop;
-            if (itemChance < 51)
+            if (itemChance < 2)
+            {
+                drop = new Pistol();
+            }
+            else if (itemChance < 3)
+            {
+                drop = new LMG();
+            }
+            else if(itemChance < 11)
+            {
+                drop = new Akimbo();
+            }
+            else if (itemChance < 19)
+            {
+                drop = new SMG();
+            }
+            else if (itemChance < 24)
+            {
+                drop = new Sniper();
+            }
+            else if (itemChance < 31)
+            {
+                drop = new Rifle();
+            }
+            else if (itemChance < 56)
             {
                 drop = new Grenade();
             }
-            else if (itemChance < 76)
+            else if (itemChance < 61)
+            {
+                drop = new Medpac();
+            }
+            else if (itemChance < 71)
+            {
+                drop = new EagleEye();
+            }
+            else if(itemChance < 81)
             {
                 drop = new ShrugOff();
             }
             else
             {
-                drop = new EagleEye();
+
             }
             Drop = drop;
         }
