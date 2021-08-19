@@ -20,4 +20,10 @@ namespace ConsoleGame_CoverShooter.Classes
         void Shoot(Player player);
 
     }
+    public interface IEnemy2
+    {
+        void Action4(Player player);
+        void Action5(Player player);
+        void Action6(Player player);
+    }
 }
