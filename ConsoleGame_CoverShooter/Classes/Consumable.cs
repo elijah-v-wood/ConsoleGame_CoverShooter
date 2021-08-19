@@ -34,6 +34,12 @@ namespace ConsoleGame_CoverShooter.Classes
             player.SniperFlag = false;
             player.LMGFlag = false;
         }
+        public void SetAllArmorFlagsFalse(Player player)
+        {
+            player.BArmorFlag = false;
+            player.AArmorFlag = false;
+            player.FArmorFlag = false;
+        }
 
         public void UseItem()
         {
@@ -169,6 +175,38 @@ namespace ConsoleGame_CoverShooter.Classes
             player.LMGFlag = true;
 
         }
+    }
+    public class BasicArmor : Consumable
+    {
+        public new string Name { get { return "Basic Armor"; } }
+        public void PickUp(Player player)
+        {
+            SetAllArmorFlagsFalse(player);
+            player.BArmorFlag = true;
+
+        }
+    }
+    public class AdvancedArmor : Consumable
+    {
+        public new string Name { get { return "Advanced Armor"; } }
+        public void PickUp(Player player)
+        {
+            SetAllArmorFlagsFalse(player);
+            player.AArmorFlag = true;
+
+        }
+
+    }
+    public class FuturisticArmor : Consumable
+    {
+        public new string Name { get { return "Futuristic Armor"; } }
+        public void PickUp(Player player)
+        {
+            SetAllArmorFlagsFalse(player);
+            player.FArmorFlag = true;
+
+        }
+
     }
 
 
