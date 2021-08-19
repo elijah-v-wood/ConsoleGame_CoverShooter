@@ -9,14 +9,48 @@ namespace ConsoleGame_CoverShooter.Classes
 {
     public class Player
     {
-        public int AC { get; set; } = 10;
+        public bool InCover { get; set; }
+        public int AC
+        {
+            get
+            {
+                if (InCover)
+                {
+                    return 17;
+                }
+                else
+                {
+                    return 10;
+                }
+            }
+        }
+
         public int HP { get; set; } = 50;
+        public bool HasShrugOff { get; set; }
+        public bool HasEagleEye { get; set; }
+
+        //gunflags
+
+        public bool PistolFlag { get; set; }
+        public bool AkimboFlag { get; set; }
+        public bool SMGFlag { get; set; }
+        public bool SniperFlag { get; set; }
+        public bool RifleFlag { get; set; }
+        public bool LMGFlag { get; set; }
 
         public void Shoot(IEnemy enemy)
         {
             Random rand = new Random();
             Thread.Sleep(10);
-            int shot = rand.Next(1, 21) + 3;
+            int shot;
+            if (HasEagleEye)
+            {
+            shot = rand.Next(1, 21) + 7;
+            }
+            else
+            {
+            shot = rand.Next(1, 21) + 3;
+            }
             if (shot > enemy.AC)
             {
                 Thread.Sleep(10);
