@@ -59,7 +59,8 @@ namespace ConsoleGame_CoverShooter
         {
             Console.WriteLine("Starting the game...");
             Inventory playerInventory = new Inventory();
-            playerInventory.grenade.Quantity = 1;
+            //set to one later
+            playerInventory.grenade.Quantity = 5;
             Player player = new Player();
             Room firstRoom = new Room();
             Room secondRoom = new Room();
@@ -88,7 +89,8 @@ namespace ConsoleGame_CoverShooter
                     $"Your health is {player.HP}");
                 Console.WriteLine("What do you want to do?:\n" +
                     "1. Shoot \n" +
-                    "2. Take Cover");
+                    "2. Take Cover\n"+
+                    "3. Open Inventory");
                 string userInput = Console.ReadLine().ToLower();
                 switch (userInput)
                 {
@@ -113,7 +115,6 @@ namespace ConsoleGame_CoverShooter
                         Console.WriteLine("what are you gonna do?");
                         break;
                 }
-                Console.ReadKey();
                 for (int enemyindex = 0; enemyindex < currentRoom.Enemies.Count; enemyindex++)
                 {
                     currentRoom.CheckHealth(currentRoom.Enemies[enemyindex]);
@@ -190,7 +191,13 @@ namespace ConsoleGame_CoverShooter
         }
         private void OpenPockets(Inventory pockets, IEnemy enemy)
         {
-            pockets.DisplayInventory();
+            Console.Clear();
+            //There likely isnt a worse way to do this, but it works for now
+            /**/
+            Console.WriteLine("You have:");
+            DisplayInventoryItem(pockets);
+
+            Console.WriteLine("\n");
             Console.WriteLine("Input the item you wish to use or type exit");
             string userInput = Console.ReadLine().ToLower();
             switch (userInput)
@@ -212,6 +219,21 @@ namespace ConsoleGame_CoverShooter
                 case "close":
                 case "leave":
                     break;
+            }
+        }
+        private void DisplayInventoryItem(Inventory pockets)
+        {
+            if (pockets.grenade.Quantity > 0)
+            {
+                Console.WriteLine($"{pockets.grenade.Name} x{pockets.grenade.Quantity}");
+            }
+            if (pockets.shrugOff.Quantity > 0)
+            {
+                Console.WriteLine($"{pockets.shrugOff.Name} x{pockets.shrugOff.Quantity}");
+            }
+            if (pockets.eagleEye.Quantity > 0)
+            {
+                Console.WriteLine($"{pockets.eagleEye.Name} x{pockets.eagleEye.Quantity}");
             }
         }
     }
