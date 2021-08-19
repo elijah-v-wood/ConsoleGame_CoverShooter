@@ -136,6 +136,22 @@ namespace ConsoleGame_CoverShooter
                 if (currentRoom.HasNoEnemies) 
                 {
                     Console.WriteLine("you killed all the enemies in the room!");
+                    Console.WriteLine($"You found a {currentRoom.Drop.Name}! Do you want to keep it? (y/n)");
+                    string userinput = Console.ReadLine().ToLower();
+                    switch (userinput)
+                    {
+                        case "y":
+                        case "yes":
+                            currentRoom.DropItem(playerInventory);
+                            break;
+                        case "n":
+                        case "no":
+                            Console.WriteLine("you did not pick up the item");
+                            break;
+                        default:
+                            currentRoom.DropItem(playerInventory);
+                            break;
+                    }
                     roomList.Remove(currentRoom);
                     //you get an item
 

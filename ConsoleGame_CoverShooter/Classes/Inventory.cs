@@ -16,7 +16,15 @@ namespace ConsoleGame_CoverShooter.Classes
 
         public void PickUp(Consumable item)
         {
+            //if not a gun or armor
+            if (item.GetType() != new Pistol().GetType() || item.GetType() != new Akimbo().GetType() || item.GetType() != new SMG().GetType() || item.GetType() != new Sniper().GetType() || item.GetType() != new Rifle().GetType() || item.GetType() != new LMG().GetType() || item.GetType() != new BasicArmor().GetType() || item.GetType() != new AdvancedArmor().GetType() || item.GetType() != new FuturisticArmor().GetType())
+            {
             item.Quantity++;
+            }
+            else if(item.GetType() == new Pistol().GetType() || item.GetType() == new Akimbo().GetType() || item.GetType() == new SMG().GetType() || item.GetType() == new Sniper().GetType() || item.GetType() == new Rifle().GetType() || item.GetType() == new LMG().GetType())
+            {
+                
+            }
         }
         public void DisplayInventory()
         {
