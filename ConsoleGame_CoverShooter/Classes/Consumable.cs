@@ -25,6 +25,15 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
+        public void SetAllGunFlagsFalse(Player player)
+        {
+            player.PistolFlag = false;
+            player.AkimboFlag = false;
+            player.SMGFlag = false;
+            player.RifleFlag = false;
+            player.SniperFlag = false;
+            player.LMGFlag = false;
+        }
 
         public void UseItem()
         {
@@ -78,13 +87,52 @@ namespace ConsoleGame_CoverShooter.Classes
     public class ShrugOff : Consumable
     {
         public new string Name { get { return "Shrug-Off"; } }
-        public bool ShrugOffFlag { get; set; }
 
     }
     public class EagleEye : Consumable
     {
         public new string Name { get { return "Eagle-Eye"; } }
-        public bool EagleEyeFlag { get; set; }
+
+        public void Boost(Player player)
+        {
+            player.HasEagleEye = true;
+            UseItem();
+        }
     }
+    public class Medpac : Consumable
+    {
+        public new string Name { get { return "Med-pac"; } }
+        public void Heal(Player player)
+        {
+            Random rand = new Random();
+            int heal = rand.Next(10, 26);
+            player.HP += heal;
+            UseItem();
+        }
+    }
+    public class  Pistol : Consumable
+    {
+        public new string Name { get { return "Pistol"; } }
+        public void PickUp(Player player)
+        {
+            SetAllGunFlagsFalse(player);
+            player.PistolFlag = true;
+
+        }
+    }
+    public class Akimbo : Consumable
+    {
+        public new string Name { get { return "Akimbo Pistols"; } }
+        public void PickUp(Player player)
+        {
+            SetAllGunFlagsFalse(player);
+            player.AkimboFlag = true;
+
+        }
+    }
+
+
+
+
 
 }

@@ -12,6 +12,7 @@ namespace ConsoleGame_CoverShooter.Classes
         public Grenade grenade = new Grenade();
         public ShrugOff shrugOff = new ShrugOff();
         public EagleEye eagleEye = new EagleEye();
+        public Medpac medpac = new Medpac();
 
         public void PickUp(Consumable item)
         {
