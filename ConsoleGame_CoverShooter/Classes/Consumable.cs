@@ -93,6 +93,18 @@ namespace ConsoleGame_CoverShooter.Classes
     public class ShrugOff : Consumable
     {
         public new string Name { get { return "Shrug-Off"; } }
+        public void Boost(Player player)
+        {
+            if (HasItem) {
+                player.HasShrugOff = true;
+                UseItem();
+            }
+            else
+            {
+                Console.WriteLine("ya can't use it if you don't got it");
+            }
+            
+        }
 
     }
     public class EagleEye : Consumable
@@ -101,8 +113,15 @@ namespace ConsoleGame_CoverShooter.Classes
 
         public void Boost(Player player)
         {
-            player.HasEagleEye = true;
-            UseItem();
+            if (HasItem)
+            {
+                player.HasEagleEye = true;
+                UseItem();
+            }
+            else
+            {
+                Console.WriteLine("ya can't use it if you don't got it");
+            }
         }
     }
     public class Medpac : Consumable
@@ -110,10 +129,18 @@ namespace ConsoleGame_CoverShooter.Classes
         public new string Name { get { return "Med-pac"; } }
         public void Heal(Player player)
         {
-            Random rand = new Random();
-            int heal = rand.Next(10, 26);
-            player.HP += heal;
-            UseItem();
+            if (HasItem)
+            {
+                Random rand = new Random();
+                int heal = rand.Next(10, 26);
+                player.HP += heal;
+                UseItem();
+            }
+            else
+            {
+                Console.WriteLine("ya can't use it if you don't got it");
+            }
+            
         }
     }
     public class  Pistol : Consumable

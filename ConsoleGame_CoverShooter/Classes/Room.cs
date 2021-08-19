@@ -36,9 +36,9 @@ namespace ConsoleGame_CoverShooter.Classes
         }
         public Consumable Drop { get; private set; }
 
-        public void DropItem(Inventory inventory)
+        public void DropItem(Inventory inventory, Player player)
         {
-            inventory.PickUp(Drop);
+            inventory.PickUp(Drop, player);
         }
 
         public Room(int roomNumber /*, int enemynumber */)
