@@ -208,14 +208,14 @@ namespace ConsoleGame_CoverShooter
                     {
                         case "y":
                         case "yes":
-                            currentRoom.DropItem(playerInventory);
+                            currentRoom.DropItem(playerInventory, player);
                             break;
                         case "n":
                         case "no":
                             Console.WriteLine("you did not pick up the item");
                             break;
                         default:
-                            currentRoom.DropItem(playerInventory);
+                            currentRoom.DropItem(playerInventory, player);
                             break;
                     }
                     roomList.Remove(currentRoom);
