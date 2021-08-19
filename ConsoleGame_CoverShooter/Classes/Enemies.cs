@@ -254,10 +254,10 @@ namespace ConsoleGame_CoverShooter.Classes
     }
     public class BlueMobster : BlueEnemy, IEnemy2
     {
-        public int dmgLowerBound { get; } = 1;
-        public int dmgUpperBound { get; } = 10;
-        public string name { get; } = "Blue Mobster";
-        public int AC
+        public new int dmgLowerBound { get; } = 1;
+        public  new int dmgUpperBound { get; } = 10;
+        public new string name { get; } = "Blue Mobster";
+        public new int AC
         {
             get
             {
@@ -271,7 +271,7 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        public int HP { get; set; } = 22;
+        public new int HP { get; set; } = 22;
 
         public void Action4(Player player)
         {
@@ -288,10 +288,10 @@ namespace ConsoleGame_CoverShooter.Classes
     }
     public class RedMobster : RedEnemy, IEnemy2
     {
-        public int dmgLowerBound { get; } = 1;
-        public int dmgUpperBound { get; } = 10;
-        public string name { get; } = "Red Mobster";
-        public int AC
+        public new int dmgLowerBound { get; } = 1;
+        public new int dmgUpperBound { get; } = 10;
+        public new string name { get; } = "Red Mobster";
+        public new int AC
         {
             get
             {
@@ -305,7 +305,7 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        public int HP { get; set; } = 22;
+        public new int HP { get; set; } = 22;
 
         public void Action4(Player player)
         {
@@ -322,10 +322,10 @@ namespace ConsoleGame_CoverShooter.Classes
     }
     public class YellowMobster : YellowEnemy, IEnemy2
     {
-        public int dmgLowerBound { get; } = 1;
-        public int dmgUpperBound { get; } = 10;
-        public string name { get; } = "Yellow Mobster";
-        public int AC
+        public new int dmgLowerBound { get; } = 1;
+        public new int dmgUpperBound { get; } = 10;
+        public new string name { get; } = "Yellow Mobster";
+        public new int AC
         {
             get
             {
@@ -356,10 +356,10 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        public int HP { get; set; } = 22;
+        public new int HP { get; set; } = 22;
 
 
-        public void Action1(Player player)
+        public new void Action1(Player player)
         {
 
             if (ShouldShoot)
@@ -373,7 +373,7 @@ namespace ConsoleGame_CoverShooter.Classes
 
         }
 
-        public void Action2(Player player)
+        public new void Action2(Player player)
         {
             if (ShouldShoot)
             {
@@ -385,7 +385,7 @@ namespace ConsoleGame_CoverShooter.Classes
             }
         }
 
-        public void Action3(Player player)
+        public new void Action3(Player player)
         {
             if (ShouldShoot)
             {
@@ -433,10 +433,10 @@ namespace ConsoleGame_CoverShooter.Classes
     }
     public class GreenMobster : GreenEnemy, IEnemy2
     {
-        public int dmgLowerBound { get; } = 1;
-        public int dmgUpperBound { get; } = 10;
-        public string name { get; } = "Green Mobster";
-        public int AC
+        public new int dmgLowerBound { get; } = 1;
+        public new int dmgUpperBound { get; } = 10;
+        public new string name { get; } = "Green Mobster";
+        public new int AC
         {
             get
             {
@@ -450,9 +450,9 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        public int HP { get; set; } = 22;
+        public new int HP { get; set; } = 22;
 
-        public void Shoot(Player player)
+        public new void Shoot(Player player)
         {
             InCover = false;
             Random rand = new Random();
@@ -497,17 +497,17 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        public void Action1(Player player)
+        public new void Action1(Player player)
         {
             Shoot(player);
         }
 
-        public void Action2(Player player)
+        public new void Action2(Player player)
         {
             Shoot(player);
         }
 
-        public void Action3(Player player)
+        public new void Action3(Player player)
         {
             Shoot(player);
         }
