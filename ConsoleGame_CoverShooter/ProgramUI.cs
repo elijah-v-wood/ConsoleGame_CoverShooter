@@ -118,8 +118,74 @@ namespace ConsoleGame_CoverShooter
                     currentRoom.CheckHealth(currentRoom.Enemies[enemyindex]);
                     if (currentRoom.Enemies.Count > 0)
                     {
-
-                        if (turnCount % 3 == 0)
+                        if (currentRoom.Enemies[enemyindex].GetType() == typeof(IEnemy3))
+                        {
+                            if (turnCount % 9 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action9(player);
+                            }
+                            else if (turnCount % 8 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action8(player);
+                            }
+                            else if (turnCount % 7 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action7(player);
+                            }
+                            else if (turnCount % 6 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action6(player);
+                            }
+                            else if (turnCount % 5 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action5(player);
+                            }
+                            else if (turnCount % 4 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action4(player);
+                            }
+                            else if (turnCount % 3 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action3(player);
+                            }
+                            else if (turnCount % 2 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action2(player);
+                            }
+                            else
+                            {
+                                currentRoom.Enemies[enemyindex].Action1(player);
+                            }
+                        }
+                        else if(currentRoom.Enemies[enemyindex].GetType() == typeof(IEnemy2))
+                        {
+                            if (turnCount % 6 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action6(player);
+                            }
+                            else if (turnCount % 5 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action5(player);
+                            }
+                            else if (turnCount % 4 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action4(player);
+                            }
+                            else if (turnCount % 3 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action3(player);
+                            }
+                            else if (turnCount % 2 == 0)
+                            {
+                                currentRoom.Enemies[enemyindex].Action2(player);
+                            }
+                            else
+                            {
+                                currentRoom.Enemies[enemyindex].Action1(player);
+                            }
+                        }
+                        
+                        else if (turnCount % 3 == 0)
                         {
                             currentRoom.Enemies[enemyindex].Action3(player);
                         }

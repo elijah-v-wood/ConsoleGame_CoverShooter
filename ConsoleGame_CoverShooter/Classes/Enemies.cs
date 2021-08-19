@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame_CoverShooter.Classes
 {
+    
     public class BlueEnemy : IEnemy
     {
         public string name { get; } = "Blue man";
@@ -75,6 +76,25 @@ namespace ConsoleGame_CoverShooter.Classes
         {
             TakeCover();
         }
+        public void Action4(Player player)
+        { 
+        }
+        public void Action5(Player player)
+        {
+        }
+        public void Action6(Player player)
+        {
+        }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
+        }
+
     }
     public class RedEnemy : IEnemy
     {
@@ -142,6 +162,24 @@ namespace ConsoleGame_CoverShooter.Classes
         public void Action3(Player player)
         {
             Shoot(player);
+        }
+        public void Action4(Player player)
+        {
+        }
+        public void Action5(Player player)
+        {
+        }
+        public void Action6(Player player)
+        {
+        }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
         }
 
     }
@@ -213,7 +251,24 @@ namespace ConsoleGame_CoverShooter.Classes
         {
             TakeCover();
         }
-
+        public void Action4(Player player)
+        {
+        }
+        public void Action5(Player player)
+        {
+        }
+        public void Action6(Player player)
+        {
+        }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
+        }
     }
     public class GreenEnemy : IEnemy
     {
@@ -282,6 +337,24 @@ namespace ConsoleGame_CoverShooter.Classes
         {
             Shoot(player);
         }
+        public void Action4(Player player)
+        {
+        }
+        public void Action5(Player player)
+        {
+        }
+        public void Action6(Player player)
+        {
+        }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
+        }
 
     }
     public class BlueMobster : BlueEnemy, IEnemy2
@@ -317,6 +390,15 @@ namespace ConsoleGame_CoverShooter.Classes
         {
             TakeCover();
         }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
+        }
     }
     public class RedMobster : RedEnemy, IEnemy2
     {
@@ -350,6 +432,15 @@ namespace ConsoleGame_CoverShooter.Classes
         public void Action6(Player player)
         {
             Shoot(player);
+        }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
         }
     }
     public class YellowMobster : YellowEnemy, IEnemy2
@@ -462,6 +553,15 @@ namespace ConsoleGame_CoverShooter.Classes
                 Shoot(player);
             }
         }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
+        }
     }
     public class GreenMobster : GreenEnemy, IEnemy2
     {
@@ -571,5 +671,48 @@ namespace ConsoleGame_CoverShooter.Classes
         {
             Shoot(player);
         }
+        public void Action7(Player player)
+        {
+        }
+        public void Action8(Player player)
+        {
+        }
+        public void Action9(Player player)
+        {
+        }
     }
+    /*
+    public class BlueBoss: BlueMobster, IEnemy3
+    {
+        public new int dmgLowerBound { get; } = 3;
+        public new int dmgUpperBound { get; } = 12;
+        public new string name { get; } = "Blue Boss";
+        public new int AC
+        {
+            get
+            {
+                if (InCover)
+                {
+                    return 18;
+                }
+                else
+                {
+                    return 11;
+                }
+            }
+        }
+        public new int HP { get; set; } = 30;
+        public void Action7(Player player)
+        {
+            Shoot(player);
+        }
+        public void Action8(Player player)
+        {
+            Shoot(player);
+        }
+        public void Action9(Player player)
+        {
+            Shoot(player);
+        }
+    }*/
 }
