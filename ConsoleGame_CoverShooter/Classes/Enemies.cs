@@ -44,6 +44,14 @@ namespace ConsoleGame_CoverShooter.Classes
             {
                 Thread.Sleep(10);
                 int dmg = rand.Next(dmgLowerBound, dmgUpperBound);
+                if (player.HasShrugOff)
+                {
+                    dmg -= 3;
+                }
+                if (dmg <= 0)
+                {
+                    dmg = 0;
+                }
                 player.HP -= dmg;
                 Console.WriteLine($"The enemy shoots you for {shoot}.");
                 Console.WriteLine($"You take {dmg} damage.");
@@ -104,6 +112,14 @@ namespace ConsoleGame_CoverShooter.Classes
             {
                 Thread.Sleep(10);
                 int dmg = rand.Next(dmgLowerBound, dmgUpperBound);
+                if (player.HasShrugOff)
+                {
+                    dmg -= 3;
+                }
+                if (dmg <= 0)
+                {
+                    dmg = 0;
+                }
                 player.HP -= dmg;
                 Console.WriteLine($"The enemy shoots you for {shoot}.");
                 Console.WriteLine($"You take {dmg} damage.");
@@ -166,6 +182,14 @@ namespace ConsoleGame_CoverShooter.Classes
             {
                 Thread.Sleep(10);
                 int dmg = rand.Next(dmgLowerBound, dmgUpperBound);
+                if (player.HasShrugOff)
+                {
+                    dmg -= 3;
+                }
+                if (dmg <= 0)
+                {
+                    dmg = 0;
+                }
                 player.HP -= dmg;
                 Console.WriteLine($"The enemy shoots you for {shoot}.");
                 Console.WriteLine($"You take {dmg} damage.");
@@ -478,6 +502,14 @@ namespace ConsoleGame_CoverShooter.Classes
                 {
                     Thread.Sleep(10);
                     int dmg = rand.Next(5, 10);
+                    if (player.HasShrugOff)
+                    {
+                        dmg -= 3;
+                    }
+                    if (dmg <= 0)
+                    {
+                        dmg = 0;
+                    }
                     player.HP -= dmg;
                     Console.WriteLine($"The enemy shoots you for {shoot}.");
                     Console.WriteLine($"You take {dmg} damage.");
@@ -495,6 +527,14 @@ namespace ConsoleGame_CoverShooter.Classes
                 {
                     Thread.Sleep(10);
                     int dmg = rand.Next(dmgLowerBound, dmgUpperBound);
+                    if (player.HasShrugOff)
+                    {
+                        dmg -= 3;
+                    }
+                    if (dmg <= 0)
+                    {
+                        dmg = 0;
+                    }
                     player.HP -= dmg;
                     Console.WriteLine($"The enemy shoots you for {shoot}.");
                     Console.WriteLine($"You take {dmg} damage.");
