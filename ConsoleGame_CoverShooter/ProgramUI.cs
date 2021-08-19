@@ -60,7 +60,7 @@ namespace ConsoleGame_CoverShooter
             Console.WriteLine("Starting the game...");
             Inventory playerInventory = new Inventory();
             //set to one later
-            playerInventory.grenade.Quantity = 5;
+            playerInventory.grenade.Quantity = 3;
             Player player = new Player();
            
             List<Room> roomList = new List<Room>();
@@ -76,6 +76,7 @@ namespace ConsoleGame_CoverShooter
             Console.Clear();
             bool combatActive = true;
             int turnCount = 1;
+            player.PistolFlag=true;
             while (combatActive)
             {
                 Room currentRoom = roomList.First();
