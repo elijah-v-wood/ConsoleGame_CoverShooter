@@ -130,6 +130,47 @@ namespace ConsoleGame_CoverShooter.Classes
 
         }
     }
+    public class SMG : Consumable
+    {
+        public new string Name { get { return "Sub-machine Gun"; } }
+        public void PickUp(Player player)
+        {
+            SetAllGunFlagsFalse(player);
+            player.SMGFlag = true;
+
+        }
+    }
+    public class Rifle : Consumable
+    {
+        public new string Name { get { return "Rifle"; } }
+        public void PickUp(Player player)
+        {
+            SetAllGunFlagsFalse(player);
+            player.RifleFlag = true;
+
+        }
+    }
+    public class Sniper : Consumable
+    {
+        public new string Name { get { return "Sniper Rifle"; } }
+        public void PickUp(Player player)
+        {
+            SetAllGunFlagsFalse(player);
+            player.SniperFlag = true;
+
+        }
+    }
+    public class LMG : Consumable
+    {
+        public new string Name { get { return "Light Machine Gun"; } }
+        public void PickUp(Player player)
+        {
+            SetAllGunFlagsFalse(player);
+            player.LMGFlag = true;
+
+        }
+    }
+
 
 
 

@@ -37,27 +37,360 @@ namespace ConsoleGame_CoverShooter.Classes
         public bool SniperFlag { get; set; }
         public bool RifleFlag { get; set; }
         public bool LMGFlag { get; set; }
+        //ArmorFlags
 
         public void Shoot(IEnemy enemy)
         {
             InCover = false;
+            if (PistolFlag)
+            {
+                Pistol(enemy);
+            }
+            else if (AkimboFlag)
+            {
+                Akimbo(enemy);
+            }
+            else if (SMGFlag)
+            {
+                SMG(enemy);
+            }
+            else if (SniperFlag)
+            {
+                Sniper(enemy);
+            }
+            else if (RifleFlag)
+            {
+                Rifle(enemy);
+            }
+            else if (LMGFlag)
+            {
+                LMG(enemy);
+            }
+            else
+            {
+                Random rand = new Random();
+                Thread.Sleep(10);
+                int shot;
+                if (HasEagleEye)
+                {
+                    shot = rand.Next(1, 21) + 7;
+                }
+                else
+                {
+                    shot = rand.Next(1, 21) + 3;
+                }
+                if (shot > enemy.AC)
+                {
+                    Thread.Sleep(10);
+                    int dmg = rand.Next(1, 7);
+                    enemy.HP -= dmg;
+                    Console.WriteLine($"you shot the {enemy.name} for {shot}");
+                    Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+                }
+                else
+                {
+                    Console.WriteLine("You miss.");
+                }
+            }
+            
+        }
+
+        public void TakeCover()
+        {
+            InCover = true;
+            Console.WriteLine("you take cover!");
+        }
+
+        public void Pistol(IEnemy enemy)
+        {
             Random rand = new Random();
             Thread.Sleep(10);
             int shot;
             if (HasEagleEye)
             {
-            shot = rand.Next(1, 21) + 7;
+                shot = rand.Next(1, 21) + 7;
             }
             else
             {
-            shot = rand.Next(1, 21) + 3;
+                shot = rand.Next(1, 21) + 3;
             }
             if (shot > enemy.AC)
             {
                 Thread.Sleep(10);
                 int dmg = rand.Next(1, 7);
                 enemy.HP -= dmg;
-                Console.WriteLine($"you shot the {enemy.name} for {shot}");
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your pistol.");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+        }
+        public void Akimbo(IEnemy enemy)
+        {
+            Pistol(enemy);
+            Pistol(enemy);
+        }
+        public void SMG(IEnemy enemy)
+        {
+            Random rand = new Random();
+            Thread.Sleep(10);
+            int shot;
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 8;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 4;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your SMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            Thread.Sleep(10);
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 8;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 4;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your SMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            Thread.Sleep(10);
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 8;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 4;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your SMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+        }
+        public void Rifle(IEnemy enemy)
+        {
+            Random rand = new Random();
+            Thread.Sleep(10);
+            int shot;
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 7;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 3;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(3, 9);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your Rifle");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 7;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 3;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(3, 9);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your Rifle");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+        }
+        public void Sniper(IEnemy enemy)
+        {
+            Random rand = new Random();
+            Thread.Sleep(10);
+            int shot;
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 9;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 5;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(5, 21);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your Sniper Rifle");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+        }
+        public void LMG(IEnemy enemy)
+        {
+            Random rand = new Random();
+            Thread.Sleep(10);
+            int shot;
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 6;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 2;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your LMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 6;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 2;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your LMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 6;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 2;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your LMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 6;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 2;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your LMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 6;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 2;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your LMG");
+                Console.WriteLine($"{enemy.name} takes {dmg} damage.");
+            }
+            else
+            {
+                Console.WriteLine("You miss.");
+            }
+            if (HasEagleEye)
+            {
+                shot = rand.Next(1, 21) + 6;
+            }
+            else
+            {
+                shot = rand.Next(1, 21) + 2;
+            }
+            if (shot > enemy.AC)
+            {
+                Thread.Sleep(10);
+                int dmg = rand.Next(1, 7);
+                enemy.HP -= dmg;
+                Console.WriteLine($"you shot the {enemy.name} for {shot} with your LMG");
                 Console.WriteLine($"{enemy.name} takes {dmg} damage.");
             }
             else
@@ -66,10 +399,5 @@ namespace ConsoleGame_CoverShooter.Classes
             }
         }
 
-        public void TakeCover()
-        {
-            InCover = true;
-            Console.WriteLine("you take cover!");
-        }
     }
 }
