@@ -18,7 +18,7 @@ namespace ConsoleGame_CoverShooter.Classes
                 {
                     if (BArmorFlag) { return 19; }
                     else if (AArmorFlag) { return 20; }
-                    else if (FArmorFlag) { return 22; }
+                    else if (FArmorFlag) { return 25; }
                     else { return 17; }
                 }
                 else
