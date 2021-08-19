@@ -62,17 +62,15 @@ namespace ConsoleGame_CoverShooter
             //set to one later
             playerInventory.grenade.Quantity = 5;
             Player player = new Player();
-            Room firstRoom = new Room();
-            Room secondRoom = new Room();
-            Room thirdRoom = new Room();
-            Room fourthRoom = new Room();
-            Room fifthRoom = new Room();
+           
             List<Room> roomList = new List<Room>();
-            roomList.Add(firstRoom);
-            roomList.Add(secondRoom);
-            roomList.Add(thirdRoom);
-            roomList.Add(fourthRoom);
-            roomList.Add(fifthRoom);
+
+            for (int i = 0; i < 11; i++)
+            {
+                Room roomI = new Room(i);
+                roomList.Add(roomI);
+            }
+
             Thread.Sleep(1000);
             start = DateTime.Now;
             Console.Clear();

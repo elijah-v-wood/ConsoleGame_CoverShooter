@@ -34,19 +34,29 @@ namespace ConsoleGame_CoverShooter.Classes
                 }
             }
         }
-        private Consumable Drop {get; set; }
+        private Consumable Drop { get; set; }
 
         public void DropItem(Inventory inventory)
         {
             inventory.PickUp(Drop);
         }
 
-        public Room( /*int enemynumber */)
+        public Room(int roomNumber /*, int enemynumber */)
         {
             IEnemy[] PossibleEnemies = { new BlueEnemy(), new RedEnemy(), new YellowEnemy(), new GreenEnemy() };
-            int enemynumber = 1; // remove later when we add to the constructor
-            Enemies = new List<IEnemy>();
             Random randy = new Random();
+            Thread.Sleep(5);
+            int enemynumber = 1;
+            if (roomNumber > 5)
+            {
+                enemynumber = randy.Next(1, 3);
+                if (enemynumber < 2)
+                {
+                    IEnemy[] PossibleEnemiesOverride = { new BlueMobster(), new RedMobster(), new YellowMobster(), new GreenMobster() };
+                    PossibleEnemies = PossibleEnemiesOverride;
+                }
+            }
+            Enemies = new List<IEnemy>();
             for (int i = 0; i < enemynumber; i++)
             {
                 Thread.Sleep(5);
