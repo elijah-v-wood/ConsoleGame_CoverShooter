@@ -47,7 +47,7 @@ namespace ConsoleGame_CoverShooter.Classes
             {
                 Random rand = new Random();
                 Thread.Sleep(10);
-                int shot = rand.Next(1, 21);
+                int shot = rand.Next(1, 21)+3;
                 if (enemy.InCover)
                 {
                     shot += 10;
@@ -55,7 +55,7 @@ namespace ConsoleGame_CoverShooter.Classes
                 if (shot > enemy.AC)
                 {
                     Thread.Sleep(10);
-                    int dmg = rand.Next(1, 7);
+                    int dmg = rand.Next(5, 10);
                     if (enemy.InCover) { dmg *= 2; }
                     enemy.HP -= dmg;
                     Console.WriteLine($"you shot the {enemy.name} for {shot}");
